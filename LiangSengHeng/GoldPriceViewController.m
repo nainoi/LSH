@@ -12,6 +12,9 @@
 #import "LoadDataProduct_965.h"
 #import "LoadDataProduct_organize.h"
 #import "TableGoldViewCell.h"
+#import "AFNetworking.h"
+#import "Connect.h"
+
 @interface GoldPriceViewController ()
 
 @end
@@ -102,8 +105,9 @@
     [HUD show:YES];
     
     [self performSelector:@selector(loadData) withObject:nil afterDelay:0.1];
-    [self performSelector:@selector(loadData_965) withObject:nil afterDelay:0.2];
-    [self performSelector:@selector(loadData_organize) withObject:nil afterDelay:0.3];
+    [self performSelector:@selector(loadPriceData) withObject:nil afterDelay:0.1];
+    //[self performSelector:@selector(loadData_965) withObject:nil afterDelay:0.2];
+    //[self performSelector:@selector(loadData_organize) withObject:nil afterDelay:0.3];
 
 }
 
@@ -169,6 +173,45 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
+}
+
+-(void)loadPriceData{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *url = [MAIN_URL stringByAppendingString:PRICE_TODAY];
+    //NSDictionary *parameters = @{@"foo": @"bar"};
+    [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id response){
+        NSLog(@"NEWS: %@", response);
+        if ([response isKindOfClass:[NSArray class]]) {
+            NSArray *data = [NSArray arrayWithArray:response];
+            if (data.count > 0) {
+                self.lbl_buy_1.text = [data[0] objectForKey:@"prices1_lblBLBuy"] ;
+                self.lbl_sale_1.text = [data[0] objectForKey:@"prices1_lblBLSell"];
+                self.lbl_buy_2.text = [data[0] objectForKey:@"prices1_lblOMBuy"];
+                self.lbl_sale_2.text = [data[0] objectForKey:@"prices1_lblOMSell"];
+            }
+            
+            NSDateFormatter *dateformate=[[NSDateFormatter alloc]init];
+            [dateformate setDateFormat:@"dd/MM/yyyy"]; // Date formater
+            [dateformate setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"th_TH"]];
+            NSString *date = [dateformate stringFromDate:[NSDate date]]; // Convert date to string
+            NSLog(@"date :%@",date);
+            
+            self.dateNow_1.text = date;
+            self.dateNow_2.text = date;
+        }
+        [HUD removeFromSuperview];
+        HUD = nil;
+        [_tableView reloadData];
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error){
+        NSLog(@"Error: %@", error);
+        [HUD removeFromSuperview];
+        HUD = nil;
+    }];
 
 }
 

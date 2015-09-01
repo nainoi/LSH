@@ -32,11 +32,6 @@
 		8DE86D6B1B48C14600E7AF42 /* TH Fahkwang Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DE86D671B48C14600E7AF42 /* TH Fahkwang Italic.ttf */; };
 		8DE86D6C1B48C14600E7AF42 /* TH Fahkwang.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DE86D681B48C14600E7AF42 /* TH Fahkwang.ttf */; };
 		8DE86D6F1B48C47900E7AF42 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE86D6E1B48C47900E7AF42 /* CustomLabel.m */; };
-		EC12286E1A23775600E485BE /* tb_1278750764.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC12286D1A23775600E485BE /* tb_1278750764.jpg */; };
-		EC1228701A2377A300E485BE /* 1288324655.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC12286F1A2377A300E485BE /* 1288324655.jpg */; };
-		EC1228721A2377DC00E485BE /* 1279789989.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1228711A2377DC00E485BE /* 1279789989.jpg */; };
-		EC1228741A23781A00E485BE /* 1279687549.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1228731A23781A00E485BE /* 1279687549.jpg */; };
-		EC1228761A23785100E485BE /* 1287738797.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC1228751A23785100E485BE /* 1287738797.jpg */; };
 		EC1F239A19CEC54D009902A0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F239919CEC54D009902A0 /* MBProgressHUD.m */; };
 		EC1F239E19CEC580009902A0 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F239D19CEC580009902A0 /* CDataScanner.m */; };
 		EC1F23A619CEC5AF009902A0 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1F23A119CEC5AF009902A0 /* CFilteringJSONSerializer.m */; };
@@ -171,11 +166,6 @@
 		8DE86D6D1B48C47900E7AF42 /* CustomLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
 		8DE86D6E1B48C47900E7AF42 /* CustomLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLabel.m; sourceTree = "<group>"; };
 		B1FC4D33E5FCD110F4B3E208 /* Pods-LiangSengHeng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiangSengHeng.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LiangSengHeng/Pods-LiangSengHeng.debug.xcconfig"; sourceTree = "<group>"; };
-		EC12286D1A23775600E485BE /* tb_1278750764.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tb_1278750764.jpg; sourceTree = "<group>"; };
-		EC12286F1A2377A300E485BE /* 1288324655.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1288324655.jpg; sourceTree = "<group>"; };
-		EC1228711A2377DC00E485BE /* 1279789989.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1279789989.jpg; sourceTree = "<group>"; };
-		EC1228731A23781A00E485BE /* 1279687549.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1279687549.jpg; sourceTree = "<group>"; };
-		EC1228751A23785100E485BE /* 1287738797.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1287738797.jpg; sourceTree = "<group>"; };
 		EC1F239819CEC54D009902A0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		EC1F239919CEC54D009902A0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		EC1F239C19CEC580009902A0 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
@@ -378,11 +368,6 @@
 		EC12286C1A23772E00E485BE /* product */ = {
 			isa = PBXGroup;
 			children = (
-				EC1228751A23785100E485BE /* 1287738797.jpg */,
-				EC1228731A23781A00E485BE /* 1279687549.jpg */,
-				EC1228711A2377DC00E485BE /* 1279789989.jpg */,
-				EC12286D1A23775600E485BE /* tb_1278750764.jpg */,
-				EC12286F1A2377A300E485BE /* 1288324655.jpg */,
 			);
 			name = product;
 			sourceTree = "<group>";
@@ -810,7 +795,6 @@
 				EC241E4519CDCA590099C019 /* bg_tab.png in Resources */,
 				EC241E0A19CD42220099C019 /* icon_about.png in Resources */,
 				EC241E2919CD57F50099C019 /* logo_2.png in Resources */,
-				EC12286E1A23775600E485BE /* tb_1278750764.jpg in Resources */,
 				8DE86D6A1B48C14600E7AF42 /* TH Fahkwang Bold.ttf in Resources */,
 				8DE86D6C1B48C14600E7AF42 /* TH Fahkwang.ttf in Resources */,
 				8DE86D571B48B62A00E7AF42 /* news-pn@2x.png in Resources */,
@@ -825,12 +809,10 @@
 				8D18608C1B481F4F0085E6AF /* tabbar-bg@2x.png in Resources */,
 				ECBF959F19D8447100746170 /* logo.png in Resources */,
 				EC3C7D05199D076D00EBC10D /* Main_iPhone.storyboard in Resources */,
-				EC1228741A23781A00E485BE /* 1279687549.jpg in Resources */,
 				EC241E4A19CDCA590099C019 /* icon_next.png in Resources */,
 				EC241E4C19CDCA590099C019 /* icon_previous.png in Resources */,
 				8D18608E1B4827150085E6AF /* event-pn@2x.png in Resources */,
 				8DE86D5E1B48B97B00E7AF42 /* product-pn.png in Resources */,
-				EC1228721A2377DC00E485BE /* 1279789989.jpg in Resources */,
 				8DE86D691B48C14600E7AF42 /* TH Fahkwang Bold Italic.ttf in Resources */,
 				EC241E4719CDCA590099C019 /* icon_call.png in Resources */,
 				EC241E3519CD5E470099C019 /* title_gold.png in Resources */,
@@ -841,9 +823,7 @@
 				EC241E2B19CD58B20099C019 /* logo@2x_2.png in Resources */,
 				ECB8DD9B1A61641200D91D29 /* splash@2x.png in Resources */,
 				EC241E4E19CDCA590099C019 /* image_gold.png in Resources */,
-				EC1228701A2377A300E485BE /* 1288324655.jpg in Resources */,
 				ECBD3C3B19C4B1F100A8D610 /* bg.png in Resources */,
-				EC1228761A23785100E485BE /* 1287738797.jpg in Resources */,
 				8DE86D5B1B48B7FE00E7AF42 /* about-pn@2x.png in Resources */,
 				EC241E2519CD554C0099C019 /* bg-568h@2x.png in Resources */,
 				EC3C7CFC199D076D00EBC10D /* InfoPlist.strings in Resources */,

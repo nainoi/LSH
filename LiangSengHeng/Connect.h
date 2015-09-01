@@ -66,6 +66,7 @@
 #define PRODUCT_DETAIL @"productDetail"
 #define NEW_LIST @"listNews"
 #define EVENT_LIST @"listActivity"
+#define PRICE_TODAY @"priceToday"
 
 #define IMAGE_PATH @"http://www.golds.exclusivedatethai.com/uploads/"
 
