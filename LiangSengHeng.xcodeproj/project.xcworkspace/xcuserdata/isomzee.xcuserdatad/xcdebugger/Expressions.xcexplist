@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[AboutUsViewController viewDidLoad]:AboutUsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.aboutDataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductSubViewController loadFormDataDidFinish:]:ProductSubViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.productDataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[GoldPriceViewController tableView:numberOfRowsInSection:]:GoldPriceViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.goldDataArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:numberOfRowsInSection:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.newsDataArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController tableView:cellForRowAtIndexPath:]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "strDescription">
+            </PersistentString>
+            <PersistentString
+               value = "[[self.newsDataArray objectAtIndex:indexPath.row] objectForKey:@&quot;item_description&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "self.newsDataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductSubViewController viewDidLoad]:ProductSubViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.str_product_data">
+            </PersistentString>
+            <PersistentString
+               value = "self.productDataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ProductViewController collectionView:numberOfItemsInSection:]:ProductViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.productDataArray.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
