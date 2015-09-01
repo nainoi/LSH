@@ -1373,7 +1373,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1287738797.jpg" id="g17-I3-tHN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tb_1280561141.jpg" id="g17-I3-tHN">
                                         <rect key="frame" x="15" y="22" width="132" height="198"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -1460,7 +1460,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1287738797.jpg" width="350" height="500"/>
         <image name="bg.png" width="320" height="480"/>
         <image name="bg_map.png" width="538" height="365"/>
         <image name="bg_txt.png" width="435" height="283"/>
@@ -1474,6 +1473,7 @@
         <image name="lsh-logo.png" width="182" height="112"/>
         <image name="lsh-title.png" width="501" height="115"/>
         <image name="tabbar-bg.png" width="320" height="49"/>
+        <image name="tb_1280561141.jpg" width="130" height="130"/>
         <image name="title_gold.png" width="555" height="51"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
