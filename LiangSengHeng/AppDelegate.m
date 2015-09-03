@@ -95,7 +95,69 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+#pragma mark - Push notification
+
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
+{
+    NSLog(@"My token is: %@", deviceToken);
+    // Start the GGLInstanceID shared instance with the default config and request a registration
+    // token to enable reception of notifications
+    /*[[GGLInstanceID sharedInstance] startWithConfig:[GGLInstanceIDConfig defaultConfig]];
+    _registrationOptions = @{kGGLInstanceIDRegisterAPNSOption:deviceToken,
+                             kGGLInstanceIDAPNSServerTypeSandboxOption:@NO};
+    [[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                        scope:kGGLInstanceIDScopeGCM
+                                                      options:_registrationOptions
+                                                      handler:_registrationHandler];*/
+    
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
+}
+
+- (void)onTokenRefresh {
+    // A rotation of the registration tokens is happening, so the app needs to request a new token.
+    NSLog(@"The GCM registration token needs to be changed.");
+    /*[[GGLInstanceID sharedInstance] tokenWithAuthorizedEntity:_gcmSenderID
+                                                        scope:kGGLInstanceIDScopeGCM
+                                                      options:_registrationOptions
+                                                      handler:_registrationHandler];*/
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"Notification received: %@", userInfo);
+    // This works only if the app started the GCM service
+    //[[GCMService sharedInstance] appDidReceiveMessage:userInfo];
+    // Handle the received message
+    /*[[NSNotificationCenter defaultCenter] postNotificationName:_messageKey
+     object:nil
+     userInfo:userInfo];*/
+    
+    //[self showNotification:userInfo[@"aps"][@"alert"]];
+    //[self showAlarm:userInfo[@"aps"][@"alert"]];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
+    NSLog(@"Notification received: %@", userInfo);
+    // This works only if the app started the GCM service
+    //[[GCMService sharedInstance] appDidReceiveMessage:userInfo];
+    // Handle the received message
+    // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
+    // ...
+    /*[[NSNotificationCenter defaultCenter] postNotificationName:_messageKey
+     object:nil
+     userInfo:userInfo];*/
+    handler(UIBackgroundFetchResultNoData);
+    
+    //[self showNotification:userInfo[@"aps"][@"alert"]];
+    //[self showAlarm:userInfo[@"aps"][@"alert"]];
+    //[self showAlarm:@"xxxx"];
+}
+
+/*- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     //NSLog(@"My token is: %@", deviceToken);
     
@@ -121,9 +183,7 @@
     NSLog(@"Failed to get token, error: %@", error);
 }
 
-
-
-
+*/
 - (void)postJoinRequest:(NSString *)pStr_newToken
 {
     
