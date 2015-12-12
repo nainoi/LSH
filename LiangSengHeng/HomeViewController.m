@@ -23,8 +23,8 @@
     UIImage *selectedImage0 = [UIImage imageNamed:@"gold-pn.png"];
     UIImage *unselectedImage0 = [UIImage imageNamed:@"gold-pn.png"];
     
-    UIImage *selectedImage1 = [UIImage imageNamed:@"product-pn.png"];
-    UIImage *unselectedImage1 = [UIImage imageNamed:@"product-pn.png"];
+//    UIImage *selectedImage1 = [UIImage imageNamed:@"product-pn.png"];
+//    UIImage *unselectedImage1 = [UIImage imageNamed:@"product-pn.png"];
     
     UIImage *selectedImage2 = [UIImage imageNamed:@"event-pn.png"];
     UIImage *unselectedImage2 = [UIImage imageNamed:@"event-pn.png"];
@@ -38,17 +38,17 @@
     
     UITabBar *tabBar = self.tabBarController.tabBar;
     UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
-    UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
-    UITabBarItem *item2 = [tabBar.items objectAtIndex:2];
-    UITabBarItem *item3 = [tabBar.items objectAtIndex:3];
-    UITabBarItem *item4 = [tabBar.items objectAtIndex:4];
+    //UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *item2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *item3 = [tabBar.items objectAtIndex:2];
+    UITabBarItem *item4 = [tabBar.items objectAtIndex:3];
     
     tabBar.barTintColor = [UIColor whiteColor];
     
     //tabBar.backgroundImage = [UIImage imageNamed:@"tabbar-bg"];
     
     item0.title =@"Gold Price";
-    item1.title =@"Product";
+    //item1.title =@"Product";
     item2.title =@"Event & Activity";
     item3.title =@"News";
     item4.title =@"About Us";
@@ -61,14 +61,14 @@
     
     
     [item0 setImage:[unselectedImage0 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [item1 setImage:[unselectedImage1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    //[item1 setImage:[unselectedImage1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item2 setImage:[unselectedImage2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item3 setImage:[unselectedImage3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item4 setImage:[unselectedImage4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     
      [item0 setSelectedImage:[selectedImage0 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [item1 setSelectedImage:[selectedImage1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    //[item1 setSelectedImage:[selectedImage1 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item2 setSelectedImage:[selectedImage2 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item3 setSelectedImage:[selectedImage3 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [item4 setSelectedImage:[selectedImage4 imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];

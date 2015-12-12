@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Product.h"
 
 @interface PrductDetailViewController : UIViewController
 @property (strong, nonatomic) NSDictionary *productDataDic;
@@ -18,5 +19,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *txt_detail;
 @property (strong, nonatomic) IBOutlet UIView *view_txt;
+
+@property (strong, nonatomic) Product *product;
 
 @end

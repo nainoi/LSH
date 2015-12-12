@@ -26,6 +26,9 @@
 @property (retain, nonatomic) NSString * str_product_data;
 @property (strong, nonatomic) IBOutlet UIImageView *imageProduct;
 @property (strong, nonatomic) IBOutlet UILabel *lblProduct;
+@property (strong, nonatomic) IBOutlet UILabel *lblRatio;
+@property (strong, nonatomic) IBOutlet UILabel *lblSize;
+@property (strong, nonatomic) IBOutlet UILabel *lblWeight;
 @property (strong, nonatomic) IBOutlet UITextView *detailTV;
 @property (strong, nonatomic) Product *product;
 

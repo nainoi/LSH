@@ -50,9 +50,16 @@
     self.productDataArray = [data objectForKey:self.str_product_data];
     
     
+    
+    
     [_imageProduct sd_setImageWithURL:[NSURL URLWithString:_product.imageUrl] placeholderImage:[UIImage imageNamed:@"tb_1280561141.jpg"]];
     self.lblProduct.text = _product.productName;
     self.detailTV.text = _product.productDetail;
+    self.lblRatio.text = _product.productRatio;
+    self.lblSize.text = _product.productSize;
+    self.lblWeight.text = _product.productWeight;
+    
+    _detailTV.font = [UIFont fontWithName:@"THFahkwang" size:14];
 //    if (self.productDataArray.count > 0)
 //    {
 //        NSDictionary *tmpDict = [self.productDataArray objectAtIndex:0];

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *viewTable;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UILabel *noList;
 @property (strong, nonatomic) NSMutableArray *newsDataArray;
 @property (strong, nonatomic) NSDate *dateSelect;
 

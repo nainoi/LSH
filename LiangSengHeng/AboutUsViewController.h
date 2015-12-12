@@ -23,5 +23,6 @@
 
 - (IBAction)btCall:(id)sender;
 - (IBAction)btMail:(id)sender;
+- (IBAction)btWeb:(id)sender;
 
 @end

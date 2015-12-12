@@ -67,6 +67,8 @@
 #define NEW_LIST @"listNews"
 #define EVENT_LIST @"listActivity"
 #define PRICE_TODAY @"priceToday"
+#define INSERT_TOKEN @"insertDevice"
+#define ACTIVITY_DATE @"activityDate"
 
 #define IMAGE_PATH @"http://www.golds.exclusivedatethai.com/uploads/"
 

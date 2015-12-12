@@ -12,6 +12,7 @@
 		8D18608E1B4827150085E6AF /* event-pn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D18608D1B4827150085E6AF /* event-pn@2x.png */; };
 		8D1860901B48273E0085E6AF /* event-pn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D18608F1B48273E0085E6AF /* event-pn.png */; };
 		8D1CA3E51B583F7B00C653FB /* EventListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1CA3E41B583F7B00C653FB /* EventListVC.m */; };
+		8D4A34391BC8482500706580 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D4A34381BC8482500706580 /* globe.png */; };
 		8D80B2501B764A51009063CE /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D80B24F1B764A51009063CE /* Service.m */; };
 		8D92D2F91B4DB2810017025C /* lsh-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D92D2F71B4DB2810017025C /* lsh-logo.png */; };
 		8D92D2FA1B4DB2810017025C /* lsh-title.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D92D2F81B4DB2810017025C /* lsh-title.png */; };
@@ -141,6 +142,7 @@
 		8D18608F1B48273E0085E6AF /* event-pn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event-pn.png"; sourceTree = "<group>"; };
 		8D1CA3E31B583F7B00C653FB /* EventListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListVC.h; sourceTree = "<group>"; };
 		8D1CA3E41B583F7B00C653FB /* EventListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListVC.m; sourceTree = "<group>"; };
+		8D4A34381BC8482500706580 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
 		8D80B24E1B764A51009063CE /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		8D80B24F1B764A51009063CE /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		8D92D2F71B4DB2810017025C /* lsh-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lsh-logo.png"; sourceTree = "<group>"; };
@@ -368,6 +370,7 @@
 		EC12286C1A23772E00E485BE /* product */ = {
 			isa = PBXGroup;
 			children = (
+				8D4A34381BC8482500706580 /* globe.png */,
 			);
 			name = product;
 			sourceTree = "<group>";
@@ -747,7 +750,7 @@
 				ORGANIZATIONNAME = iSomZEE;
 				TargetAttributes = {
 					EC3C7CED199D076D00EBC10D = {
-						DevelopmentTeam = R2R9P6683M;
+						DevelopmentTeam = UXNLGS9S22;
 					};
 					EC3C7D11199D076D00EBC10D = {
 						TestTargetID = EC3C7CED199D076D00EBC10D;
@@ -823,6 +826,7 @@
 				EC241E2B19CD58B20099C019 /* logo@2x_2.png in Resources */,
 				ECB8DD9B1A61641200D91D29 /* splash@2x.png in Resources */,
 				EC241E4E19CDCA590099C019 /* image_gold.png in Resources */,
+				8D4A34391BC8482500706580 /* globe.png in Resources */,
 				ECBD3C3B19C4B1F100A8D610 /* bg.png in Resources */,
 				8DE86D5B1B48B7FE00E7AF42 /* about-pn@2x.png in Resources */,
 				EC241E2519CD554C0099C019 /* bg-568h@2x.png in Resources */,

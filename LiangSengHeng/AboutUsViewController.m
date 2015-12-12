@@ -61,6 +61,10 @@
     
 }
 
+-(IBAction)btWeb:(id)sender{
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://www.liangsengheng.net"]];
+}
+
 #pragma mark - Open the mail interface
 - (IBAction)btMail:(id)sender {
     if ([MFMailComposeViewController canSendMail])

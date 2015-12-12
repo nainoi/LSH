@@ -48,10 +48,16 @@
     self.imgView.imageURL = urlImage;
     
     
-    self.lbl_name.text = [self.productDataDic objectForKey:@"name"];
+    /*self.lbl_name.text = [self.productDataDic objectForKey:@"name"];
     self.lbl_price.text = [self.productDataDic objectForKey:@"product_price"];
     self.lbl_weigth.text = [self.productDataDic objectForKey:@"product_weight"];
-    self.txt_detail.text = [self.productDataDic objectForKey:@"description"];
+    self.txt_detail.text = [self.productDataDic objectForKey:@"description"];*/
+    
+    self.lbl_name.text = _product.productName;
+    self.lbl_price.text = @"N/A";
+    self.lbl_weigth.text = _product.productWeight;
+    self.txt_detail.text = _product.productDetail;
+    
 }
 
 - (void)didReceiveMemoryWarning

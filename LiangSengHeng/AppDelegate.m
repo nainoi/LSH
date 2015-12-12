@@ -10,6 +10,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "defs.h"
 #import "DataModel.h"
+#import "Connect.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -100,6 +102,11 @@
 - (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
     NSLog(@"My token is: %@", deviceToken);
+    NSString* newToken = [deviceToken description];
+    newToken = [newToken stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    newToken = [newToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    newToken = [newToken stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    [self postJoinRequest:newToken];
     // Start the GGLInstanceID shared instance with the default config and request a registration
     // token to enable reception of notifications
     /*[[GGLInstanceID sharedInstance] startWithConfig:[GGLInstanceIDConfig defaultConfig]];
@@ -186,20 +193,36 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
 */
 - (void)postJoinRequest:(NSString *)pStr_newToken
 {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
+    manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+    manager.requestSerializer = [AFHTTPRequestSerializer serializer];
+    NSString *url = [MAIN_URL stringByAppendingString:INSERT_TOKEN];
     
-    NSDictionary *params = @{@"cmd":@"join",
-                             @"user_id":[self.dataModel userId],
-                             @"token":[self.dataModel deviceToken]};
+    NSString *deviceId = [self uniqueIDForDevice];
     
-    AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"udid":deviceId,
+                             @"platform":@"iOS",
+                             @"token":pStr_newToken};
     
-    NSLog(@"%@",[NSString stringWithFormat:@"%@/api.php",ServerApiURL]);
-    
-    [client POST:[NSString stringWithFormat:@"%@/api.php",ServerApiURL] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //NSDictionary *parameters = @{@"foo": @"bar"};
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id response){
+        NSLog(@"NEWS: %@", response);
+        
+    }failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"Error: %@", error);
     }];
+    
+//    AFHTTPRequestOperationManager *client = [AFHTTPRequestOperationManager manager];
+//    
+//    NSLog(@"%@",[NSString stringWithFormat:@"%@/api.php",ServerApiURL]);
+//    
+//    [client POST:[NSString stringWithFormat:@"%@/api.php",ServerApiURL] parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON: %@", responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
 
 }
 
@@ -225,6 +248,18 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))handler {
     
 }
 
-
+-(NSString*)uniqueIDForDevice
+{
+    NSString* uniqueIdentifier = nil;
+    if( [UIDevice instancesRespondToSelector:@selector(identifierForVendor)] ) { // >=iOS 7
+        uniqueIdentifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    } else { //<=iOS6, Use UDID of Device
+        CFUUIDRef uuid = CFUUIDCreate(NULL);
+        //uniqueIdentifier = ( NSString*)CFUUIDCreateString(NULL, uuid);- for non- ARC
+        uniqueIdentifier = ( NSString*)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));// for ARC
+        CFRelease(uuid);
+    }
+    return uniqueIdentifier;
+}
 
 @end

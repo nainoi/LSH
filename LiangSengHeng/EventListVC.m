@@ -28,6 +28,7 @@
 //    NSUserDefaults *data = [NSUserDefaults standardUserDefaults];
 //    self.newsDataArray = [data objectForKey:@"eventData"];
     self.newsDataArray = [[NSMutableArray alloc] init];
+    _noList.hidden = YES;
     [self loadData];
 }
 
@@ -134,16 +135,19 @@
     [HUD show:YES];
     
     NSLog(@"select date %@",_dateSelect);
-//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-//    [dateFormat setDateFormat:@""];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSString *date = [dateFormat stringFromDate:_dateSelect];
+    
+    _noList.text = [NSString stringWithFormat:@"ไม่มีรายการในวันที่ %@",date];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     //manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments];
     manager.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
     manager.requestSerializer = [AFHTTPRequestSerializer serializer];
-    NSString *url = [MAIN_URL stringByAppendingString:EVENT_LIST];
-    NSDictionary *parameters = @{@"date": @"bar"};
+    NSString *url = [MAIN_URL stringByAppendingString:ACTIVITY_DATE];
+    NSDictionary *parameters = @{@"start": date};
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id response){
         NSLog(@"NEWS: %@", response);
         [_newsDataArray removeAllObjects];
@@ -151,11 +155,17 @@
             News *obj = [[News alloc] initWithDictionary:dict];
             [self.newsDataArray addObject:obj];
         }
+        if (_newsDataArray.count < 1) {
+            _noList.hidden = NO;
+        }
         [HUD removeFromSuperview];
         HUD = nil;
         [_tableView reloadData];
     }failure:^(AFHTTPRequestOperation *operation, NSError *error){
         NSLog(@"Error: %@", error);
+        if (_newsDataArray.count < 1) {
+            _noList.hidden = NO;
+        }
         [HUD removeFromSuperview];
         HUD = nil;
     }];
